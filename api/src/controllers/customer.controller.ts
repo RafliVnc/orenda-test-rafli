@@ -33,7 +33,7 @@ export default class CustomerController {
     try {
       const { id } = req.params;
       const result = await prisma.customer.findUnique({
-        where: { id_cust: Number(id) || undefined },
+        where: { custId: Number(id) || undefined },
       });
       res.status(200).json(result);
     } catch (err) {
@@ -48,7 +48,7 @@ export default class CustomerController {
       const { id } = req.params;
       const { name, phone, email, address } = req.body;
       const updatedCustomer = await prisma.customer.update({
-        where: { id_cust: Number(id) || undefined },
+        where: { custId: Number(id) || undefined },
         data: { name, phone, email, address },
       });
       res.status(200).json(updatedCustomer);
@@ -63,7 +63,7 @@ export default class CustomerController {
     try {
       const { id } = req.params;
       const deletedCustomer = await prisma.customer.delete({
-        where: { id_cust: Number(id) || undefined },
+        where: { custId: Number(id) || undefined },
       });
       res.status(200).json(deletedCustomer);
     } catch (err) {

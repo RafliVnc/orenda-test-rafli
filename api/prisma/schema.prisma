@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Customer {
-  id_cust Int     @id @default(autoincrement())
+  custId Int     @id @default(autoincrement())
   name    String?
   phone   String?
   email   String?
@@ -23,7 +23,7 @@ model Customer {
 }
 
 model Product {
-  id_product Int     @id @default(autoincrement())
+  productId Int     @id @default(autoincrement())
   name       String?
   unit       Int
   price      Int
@@ -31,20 +31,20 @@ model Product {
 }
 
 model Order {
-  id_order Int @id @default(autoincrement())
-  customer Customer @relation(fields: [id_cust], references: [id_cust])
-  order_at DateTime @default(now())
-  total_order Int
+  orderId Int @id @default(autoincrement())
+  customer Customer @relation(fields: [CustId], references: [custId])
+  orderAt DateTime @default(now())
+  totalOrder Int
   discount Int
-  id_cust Int
+  CustId Int
   DetailOrder DetailOrder[]
 }
 
 model DetailOrder {
-  id_detailOrder Int @id @default(autoincrement())
-  order      Order   @relation(fields: [id_order], references: [id_order])
-  id_order   Int
-  order_unit Int
-  product    Product @relation(fields: [id_product], references: [id_product])
-  id_product Int
+  detailOrderId Int @id @default(autoincrement())
+  order      Order   @relation(fields: [OrderId], references: [orderId])
+  OrderId   Int
+  orderUnit Int
+  product    Product @relation(fields: [ProductId], references: [productId])
+  ProductId Int
 }

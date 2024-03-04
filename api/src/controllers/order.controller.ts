@@ -6,14 +6,14 @@ const prisma = new PrismaClient();
 export default class orderController {
   async create(req: Request, res: Response) {
     try {
-      const { id_cust, total_order, discount } = req.body;
+      const { CustId, total_order, discount } = req.body;
       const result = await prisma.order.create({
         data: {
-          total_order: total_order,
+          totalOrder: total_order,
           discount: discount,
           customer: {
             connect: {
-              id_cust: id_cust
+              custId: CustId
             }
           }
         }
@@ -29,10 +29,10 @@ export default class orderController {
   }
   async getDetailOrder(req: Request, res: Response) {
     try {
-      const id_order = parseInt(req.params.id); 
+      const orderId = parseInt(req.params.id); 
       const detailOrder = await prisma.detailOrder.findMany({
         where: {
-          id_order: id_order,
+          OrderId: orderId,
         },
         include: {
           order: true, 

@@ -39,7 +39,7 @@ export default class ProductController {
     try {
       const { id } = req.params;
       const result = await prisma.product.findUnique({
-        where: { id_product: Number(id) || undefined }
+        where: { productId: Number(id) || undefined }
       });
       res.status(200).json({
         message: "findOne OK",
@@ -57,7 +57,7 @@ export default class ProductController {
       const { id } = req.params;
       const { name, unit, price } = req.body;
       const updatedPost = await prisma.product.update({
-        where: { id_product: Number(id) || undefined },
+        where: { productId: Number(id) || undefined },
         data: { name, unit, price },
       });
       res.status(200).json({
@@ -75,7 +75,7 @@ export default class ProductController {
     try {
       const { id } = req.params;
       const deletedCustomer = await prisma.product.delete({
-        where: { id_product: Number(id) || undefined },
+        where: { productId: Number(id) || undefined },
       });
       res.status(200).json({
         message: "delete OK",
