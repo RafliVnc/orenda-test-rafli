@@ -1,7 +1,7 @@
 import { Card, CardContent, Grid, Typography, Stack, Divider } from "@mui/material";
 import CustomerForm from "../molecules/CustomerForm";
 import Button from "../atoms/Button";
-import CustomerFormProps from "../../typings/interface/CustomerFormProps"
+import CustomerFormProps from "@typings/interface/CustomerFormProps"
 
 interface CustomerCardProps {
     customerFormProps: CustomerFormProps

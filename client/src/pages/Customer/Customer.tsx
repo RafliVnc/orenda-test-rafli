@@ -1,7 +1,7 @@
 import { Button, Box, Typography, Stack, Card, CardContent } from "@mui/material"
-import Sidenav from "../../components/molecules/Sidenav"
-import Navbar from "../../components/molecules/Navbar"
-import TableCustomer from "../../components/organisms/TableCustomer"
+import Sidenav from "@components/molecules/Sidenav"
+import Navbar from "@components/molecules/Navbar"
+import TableCustomer from "@components/organisms/TableCustomer"
 import { useNavigate } from 'react-router-dom';
 
 function Customer() {

@@ -1,7 +1,7 @@
 // CustomerForm.tsx
 import React from 'react';
 import { Grid, TextField } from '@mui/material';
-import  CustomerFormProps  from '../../typings/interface/CustomerFormProps';
+import  CustomerFormProps  from '@typings/interface/CustomerFormProps';
 
 const CustomerForm: React.FC<CustomerFormProps> = ({ customers, error, setCustomers }) => {
     return (
