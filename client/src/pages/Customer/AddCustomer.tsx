@@ -5,18 +5,20 @@ import CustomerCard from "../../components/organisms/CustomerCard";
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from "axios";
+import CustomersProps from "../../typings/interface/CustomersProps";
 
 const AddCustomer = () => {
     const navigate = useNavigate();
 
-    const [customers, setCustomers] = useState({
+    const [customers, setCustomers] = useState<CustomersProps>({
         name: '',
         phone: '',
         email: '',
         address: ''
     });
 
-    const [error, setError] = useState({
+
+    const [error, setError] = useState<CustomersProps>({
         name: '',
         phone: '',
         email: '',
@@ -102,9 +104,11 @@ const AddCustomer = () => {
                 </Stack>
 
                 <CustomerCard
-                    customers={customers}
-                    error={error}
-                    setCustomers={setCustomers}
+                    customerFormProps={{
+                        customers: customers,
+                        error: error,
+                        setCustomers: setCustomers
+                    }}
                     act={custId ? 'edit' : 'add'}
                     handleAddCustomer={handleAddCustomer}
                     handleEditCustomer={handleEditCustomer}

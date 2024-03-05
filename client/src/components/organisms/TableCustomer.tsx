@@ -14,6 +14,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useNavigate } from 'react-router-dom';
+import CustomersProps from "../../typings/interface/CustomersProps";
 
 interface Column {
     id: 'name' | 'phone' | 'email' | 'address' | 'action';
@@ -54,8 +55,8 @@ const options = ['Edit', 'Delete'];
 const TableCustomer = () => {
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
-    const [rows, setRows] = useState<Array<any>>([]);
-    const [filteredRows, setFilteredRows] = useState<any[]>([]);
+    const [rows, setRows] = useState<Array<CustomersProps>>([]);
+    const [filteredRows, setFilteredRows] = useState<Array<any>>([]);
     const [selectedRow, setSelectedRow] = useState<any | null>(null);
     const [searchValue, setSearchValue] = useState<string>("");
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

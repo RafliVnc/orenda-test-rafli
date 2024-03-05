@@ -1,7 +1,16 @@
 import { TextField } from "@mui/material";
 
-const TextFieldAtom = (props: any) => {
-    const { id, label, value, error, helperText, onChange, type } = props
+interface TextFieldProps {
+    id: string,
+    label: string,
+    value: string,
+    error: boolean,
+    helperText: string,
+    onChange: React.ChangeEventHandler<Element>,
+    type: string
+}
+
+const TextFieldAtom = ({ id, label, value, error, helperText, onChange, type }: TextFieldProps) => {
     return (
         <TextField
             id={id}
