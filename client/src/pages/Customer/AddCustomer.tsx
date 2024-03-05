@@ -1,7 +1,7 @@
 import { Box, Typography, Stack } from "@mui/material";
-import Sidenav from "@components/molecules/Sidenav";
-import Navbar from "@components/molecules/Navbar";
-import CustomerCard from "@components/organisms/CustomerCard";
+import Sidenav from "../../components/molecules/Sidenav";
+import Navbar from "../../components/molecules/Navbar";
+import CustomerCard from "../../components/organisms/CustomerCard";
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from "axios";

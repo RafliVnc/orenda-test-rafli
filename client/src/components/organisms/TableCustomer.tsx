@@ -14,7 +14,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useNavigate } from 'react-router-dom';
-import CustomersProps from "../../typings/interface/CustomersProps";
+import CustomersProps from "@typings/interface/CustomersProps";
 
 interface Column {
     id: 'name' | 'phone' | 'email' | 'address' | 'action';

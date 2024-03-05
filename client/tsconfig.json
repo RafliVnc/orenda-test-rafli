@@ -5,9 +5,10 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "baseUrl": "src",
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@typings/*": ["./src/typings/*"]
+      "@components/*": ["components/*"],
+      "@typings/*": ["typings/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
