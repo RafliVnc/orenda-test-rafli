@@ -1,5 +1,5 @@
 export default interface CustomersProps {
-    custId?:number | undefined
+    custId?:number 
     name: string,
     phone: string,
     email: string,

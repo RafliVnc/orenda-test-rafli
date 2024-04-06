@@ -130,16 +130,7 @@ const TableCustomer = () => {
                 }}
                 value={selectedRow}
                 getOptionLabel={(row) => row.name || ""}
-                renderInput={(params) => (
-                    <TextField
-                        {...params}
-                        label="Search Name"
-                        InputProps={{
-                            ...params.InputProps,
-                            type: 'search',
-                        }}
-                    />
-                )}
+                renderInput={(params) => <TextField {...params} label="Search" />}
             />
             <TableContainer sx={{ maxHeight: 375 }}>
                 <Table stickyHeader aria-label="sticky table">

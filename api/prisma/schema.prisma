@@ -42,9 +42,9 @@ model Order {
 
 model DetailOrder {
   detailOrderId Int @id @default(autoincrement())
+  orderUnit Int
   order      Order   @relation(fields: [OrderId], references: [orderId])
   OrderId   Int
-  orderUnit Int
   product    Product @relation(fields: [ProductId], references: [productId])
   ProductId Int
 }
