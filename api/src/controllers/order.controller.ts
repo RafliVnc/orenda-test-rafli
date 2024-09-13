@@ -29,7 +29,7 @@ export default class orderController {
   }
   async getDetailOrder(req: Request, res: Response) {
     try {
-      const orderId = parseInt(req.params.id); 
+      const orderId = req.params; 
       const detailOrder = await prisma.detailOrder.findMany({
         where: {
           OrderId: orderId,

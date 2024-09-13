@@ -16,6 +16,13 @@ class CustomerRoutes {
     // Retrieve all Customers
     this.router.get("/", this.controller.findAll);
 
+    this.router.get("/tes/:id", this.controller.tesTampil);
+
+    this.router.get("/tes", this.controller.tes);
+    this.router.get("/tes1/:id", this.controller.tesTampilOrder);
+    this.router.post("/tes", this.controller.tesBuat);
+    this.router.post("/tes1", this.controller.tesBuatOrder);
+
     // Retrieve a single Customer with id
     this.router.get("/:id", this.controller.findOne);
 
